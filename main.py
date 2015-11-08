@@ -7,9 +7,12 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
+from kivy.config import Config
 import foodthingy
 #imports all the stuff
 
+Config.set('kivy', 'window_icon', 'icons/128x128.png')
+#changes icon
 
 
 class FoodlrApp(App):
@@ -30,6 +33,8 @@ class FoodlrApp(App):
             print self.selected_ingredients
 
     def build(self):
+        #self.icon = 'icons/logo.svg'
+
         self.selected_ingredients = []
         rootlayout = BoxLayout(orientation="vertical")
         layout = GridLayout(cols=10)
